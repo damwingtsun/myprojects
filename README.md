@@ -1,5 +1,6 @@
 # myprojects
 Python Work
-This script is to randomly select an X,Y axis acting as target for the robotic fighing partner.
-Just pick an attacker style to create it's class.  Then pass into the class the style, boxer, streetfigher, karate, etc.
-with an opening like frontal, left forward, right forward., etc.
+This script is to randomly select an X,Y axes as target for the robotic fighing partner's weapons(fists,elbows,knees,feet).
+Just pick an attacker style to create it's class, then pass into the Attacker Class the style: boxer, streetfigher, karate, etc.
+with an opening like frontal, left forward, right forward., etc.  Add a arm_strike method to create the random strike to practice
+against.
