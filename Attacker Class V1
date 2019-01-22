@@ -7,15 +7,15 @@ class Attacker():
     def __init__(self,style,position,leftFist,rightFist,weapons,force):
         self.style = style
         self.position = position
-        self.leftFist = []
-        self.rightFist = []
+        self.leftFist = [0,0]
+        self.rightFist = [0,0]
         self.weapons = []
-        self.leftArmWeapons = ['Left Fist','Left Elbow']
-        self.rightArmWeapons = ['Right Fist','Right Elbow']
-        self.force = ['light','medium','hard']
-        self.weapons.extend(self.rightArmWeapons)
+        self.leftArmWeapons = ['Left Fist']
+        self.rightArmWeapons = ['Right Fist']
         self.weapons.extend(self.leftArmWeapons)
-        
+        self.weapons.extend(self.rightArmWeapons)
+        self.force = ['light','medium','hard']
+          
         
         Attacker.num_of_attacks += 1
         
@@ -33,17 +33,14 @@ class Attacker():
 
     
     def arm_strike(self):
-        print(Attacker.fists_home(self))   
+        print(Attacker.fists_home(self))
         self.value = random.choice(self.weapons) 
-
+         
         if self.value == 'Left Fist':
             self.leftFist = [(random.randint(0,10)*-1),random.randint(0,10)]
-            print("%s,%s"%(self.value,self.leftFist))
-            print(Attacker.fists_home(self))
+            return("%s:%s Strike Force= %s"%(self.value,self.leftFist,(random.choice(self.force))))
                       
         elif self.value == 'Right Fist':
             self.rightFist = [(random.randint(0,10)),random.randint(0,10)]
-            print("%s,%s"%(self.value,self.rightFist))
-            print(Attacker.fists_home(self))
-                      
+            return("%s:%s Strike Force= %s"%(self.value,self.rightFist,(random.choice(self.force))))
 
