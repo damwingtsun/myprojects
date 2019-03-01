@@ -2,7 +2,7 @@
 Robotic Fight Partner--Python Off Line
 
 This Phase I script is to randomly select an X,Y,Z axes as target from home position for the robotic Fight Partner's manipulating arms(each attached with a fist like tool).
-An instance is created by passing two required attributes to an object, opponent attack style and the base position:  boxer, streetfigher, karate, etc., frontal, left forward, right forward., etc.  Then an arm_strike method to create the capabilities of a random arm strike(left and right with collision avoidence) which then would be sent to the robotic arm which then would execute the proper movement for a human Wing Chun practioner to practice his or her techniques or drills against.  Coordinates of X,Y,Z would equate to a straight punch, to the body, cross, round house, etc., Both arms would randomly return to home based on a time delay.
+An instance is created by passing two required attributes to an object, opponent attack style and the base position:  boxer, streetfigher, karate, etc., frontal, left forward, right forward., etc.  Then an arm_strike method to create the capabilities of a random arm strike(left and right with collision avoidence) which then would be sent to the robotic arm which then would execute the proper movement for a human Wing Chun practioner to practice his or her techniques or drills against.  Coordinates of X,Y,Z would equate to a straight punch, to the body, cross, round house, etc., Both arms would randomly return to home based on a time delay and loop through a set number of iterations by user input.
 
 
 CRUD with Java--YMCA Membership Program 
