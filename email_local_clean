@@ -3,7 +3,7 @@ import os
 from timeit import default_timer as timer
 
 #read email list from external file
-fhand = open(os.path.expanduser("~/Documents/Dylan/data/email_list.txt"))
+fhand = open(os.path.expanduser("~/enter file path here(if Mac)"))
 
 #runtime begin
 start = timer()
