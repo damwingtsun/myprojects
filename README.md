@@ -13,3 +13,5 @@ CRUD with Java--YMCA Membership Program
 
 For my JAVA class, our end of the semester project was to create a YMCA member maintenance program where three files in a database of members, classes, and codes could be created, read, updated, or deleted via a looping user menu.
 
+Email Local Clean with Python
+Removing specific characters up to "+" in the local part of an e-mail while leaving domaing as is.
