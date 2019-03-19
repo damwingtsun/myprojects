@@ -1,0 +1,60 @@
+  def encrypt(orig_message, key_number, secret_message): 
+    for char in orig_message:
+        if char.isalpha():
+            char_code = ord(char)
+            char_code += key_number
+            if char.isupper():
+                if char_code > ord("Z"):
+                    char_code -= 26
+    
+                if char_code < ord("A"):
+                    char_code += 26  
+            else:       
+                if char_code > ord("z"):
+                    char_code -= 26
+    
+                if char_code < ord("a"):
+                    char_code += 26 
+                         
+            secret_message += chr(char_code)
+        
+        else:
+            secret_message += char
+            
+            
+    print("Encrytped: ", secret_message)
+        
+orig_message = input("Enter message: ")
+key_number = int(input("How many places to move message? Enter integer(1 - 26): "))
+secret_message = ''
+#------------------------------------------------------------------------------------------------------
+def decrypt(encrypted_message, key_number, decrypted_message):
+    for char in encrypted_message:
+        if char.isalpha():
+            char_code = ord(char)
+            char_code -= key_number
+            if char.isupper():
+                if char_code > ord("Z"):
+                    char_code -= 26
+
+                if char_code < ord("A"):
+                    caithar_code += 26  
+            else:       
+                if char_code > ord("z"):
+                    char_code -= 26
+
+                if char_code < ord("a"):
+                    char_code += 26 
+
+            decrypted_message += chr(char_code)
+                    
+        else:
+            decrypted_message += char
+        #key_number-=2  
+    print("Decrypted: ", decrypted_message)
+
+    
+    
+encrypted_message = input('Enter secret_message:') 
+key_number = int(input("How many places to move encryption? Enter integer(1 - 26): "))
+decrypted_message = ''
