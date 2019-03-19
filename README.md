@@ -15,4 +15,5 @@ Email Local Clean with Python
 Removing specific characters up to "+" in the local part of an e-mail while leaving domaing as is.
 
 Caesar Cryptography Functions
+
 Turn message into a secret message by shifting orignal message plain text over by user given amount.  If not alpha, then it char remains.
