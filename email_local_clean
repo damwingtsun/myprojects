@@ -22,7 +22,6 @@ def email_local_clean(fhand):
         final_email.append(corrected_email)
     return set(final_email)
 
-
 final_email = []
 
 #Addresses to receive e-mail as a set to eliminate duplicates
