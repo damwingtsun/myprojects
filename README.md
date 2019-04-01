@@ -17,3 +17,6 @@ Removing specific characters up to "+" in the local part of an e-mail while leav
 Caesar Cryptography Functions
 
 Turn message into a secret message by shifting orignal message plaintext over by a certain amount given by user.  If not alpha, then char unchanged.
+
+
+Pips match is a looping program that iterates through an array to check against a value to see if that value matches the current pip in array or the pip's set of values is a dictionary.  
