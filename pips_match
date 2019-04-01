@@ -1,0 +1,90 @@
+import random
+
+# without bottom side
+pip_1 = (2,3,4,5)
+pip_2 = (1,3,4,6)
+pip_3 = (1,2,5,6)
+pip_4 = (1,2,5,6)
+pip_5 = (1,3,4,6)
+pip_6 = (2,3,4,5)
+
+# Create dice side dictionary
+die_side_dict = {1: pip_1, 2: pip_2, 3: pip_3, 4: pip_4, 5: pip_5, 6: pip_6}
+
+# Find out the lowest pip set possible with only one side turn after roll complete.
+# Iterates through the roll from the lowest position first.
+# There might be no complete match.  'x' represents no side match.
+
+# create pips array
+def roll_dice(dice):
+    pips = []
+    for num in range(dice):
+        side = random.randint(1, 6)
+        pips.append(side)
+    return pips
+
+
+# go through array of dice rolled and find, if any, a uniform match for pips showing
+# output results
+
+def pips_set(my_roll):
+    die_count = len(my_roll)
+    result = []
+
+    # assign showing die as a pip_check for each die
+    for die in my_roll:
+        pip_check = die
+        print("\nPip check: {}".format(pip_check))
+        print("Roll ==> {}".format(my_roll))
+        dice_turn_count = 0
+        # check to see if there is a complete match starting with 1st dice in roll
+        for pip_up in my_roll:
+
+            # have a match without showing, add it to the result, move on to next die
+            if pip_up == pip_check:
+                result.append(pip_up)
+                pip_up += 1
+            # not a showing match with pip up, then check to see if sides or bottom matches pip check
+            elif pip_up != pip_check:
+                for key in die_side_dict:
+                    if pip_up == key:
+                        if pip_check in die_side_dict[key]:
+                            result.append(pip_check)
+                            print("Side match found with die {}".format(pip_up))
+                            dice_turn_count += 1
+
+                        else:
+                            print("No side match with die {}.".format(pip_up))
+                            result.append('x')
+
+        # end of loop for checking all dice against current pip_check
+        print("Result ==> {}".format(result))
+
+        if 'x' not in result:
+            print('Success!  Complete Pips Match!')
+            print("Total dice turns for this pip check: {}".format(dice_turn_count))
+
+        elif 'x' in result:
+            print("Sorry.  No complete match possible.")
+
+        result = []
+
+    # out of main loop with final total
+    print("\nPip check with least amount of side turns: ")
+    return
+
+
+# get user input
+dice = int(input("How many dice to you have? \nPlease enter an amount; I will roll.==>"))
+
+# get k or dice for roll
+while dice <= 1:
+    dice = int(input("Please enter a minimum of 2."))
+
+# test run
+my_roll = roll_dice(dice)
+my_roll.sort()
+pips_set(my_roll)
+print("\nTotal dice rolled: {}".format(dice))
+
+
