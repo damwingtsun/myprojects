@@ -52,10 +52,11 @@ def pips_set(my_roll):
                     if pip_up == key:
                         if pip_check in die_side_dict[key]:
                             result.append(pip_check)
-                            print("Side match found with die {}".format(pip_up))
                             if pip_check == die_side_dict[key][-1]:
+                                print("Bottom match found with die {}".format(pip_up))
                                 dice_turn_count += 2
                             else:
+                                print("Side match found with die {}".format(pip_up))
                                 dice_turn_count += 1
 
                         else:
@@ -63,7 +64,6 @@ def pips_set(my_roll):
                             result.append('x')
 
         # end of inner loop for checking all dice against current pip_check
-
         print("Result ==> {}".format(result))
 
         # complete match possible and added to total list
@@ -78,6 +78,13 @@ def pips_set(my_roll):
         elif 'x' in result:
             print("Sorry.  No complete match possible.")
 
+        # optional list to sort dictionary in case
+        lst = list()
+        for pip_check, dice_turn_count in turn_totals.items():
+            lst.append((dice_turn_count, pip_check))
+        lst.sort()
+
+
         # clear pip roll
         result = []
 
@@ -85,7 +92,8 @@ def pips_set(my_roll):
     print("\n====== Summary Report ======")
     print("Roll ==> {}".format(my_roll))
     print("List of all possible pip match combos with turn totals"
-          "\n(Pip Check: Turn Total:)\n {}".format(turn_totals))
+          "\n(Pip Check #: Turn Total)\n{}".format(turn_totals))
+
 
     # totals evaluation
     if all(value == dice_turn_count for value in turn_totals.values()):
@@ -94,6 +102,8 @@ def pips_set(my_roll):
     else:
         pip_min = min(turn_totals.keys(), key=(lambda k: turn_totals[k]))
         print("Pip check with least amount of side turns: {}".format(pip_min))
+        print("\nList by turn total first: \n(Turn Total, Pip_Check #)")
+        print(lst)
 
     return
 
@@ -113,6 +123,5 @@ my_roll.sort()
 print("\nTotal dice rolled: {}".format(dice))
 
 pips_set(my_roll)
-
 
 
