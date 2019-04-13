@@ -109,7 +109,7 @@ def pips_set(my_roll):
 
 
 # get user input
-dice = int(input("How many dice to you have? \nPlease enter an amount; I will roll.==>"))
+dice = int(input("How many dice do you have? \nPlease enter an amount; I will roll.==>"))
 
 # get k or dice for roll
 while dice <= 1:
